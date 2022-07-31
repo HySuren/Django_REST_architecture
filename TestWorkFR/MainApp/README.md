@@ -1,6 +1,6 @@
 Шаги к запуску прграмы:
 
-1. В терминале указываем деректорию командой: cd C:\Users\ruslan\PycharmProjects\TestWorkFR\MainApp
+1. В терминале указываем рабочую деректорию командой: cd C:\Users\ruslan\PycharmProjects\TestWorkFR\MainApp  (В моем случае)
 2. Далее в терминале пишим: python manage.py makemigrations
 3. Далее: python manage.py migrate
 4. Создаем суперпользователя(для админки): python manage.py createsuperuser
