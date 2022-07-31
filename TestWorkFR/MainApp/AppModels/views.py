@@ -1,46 +1,46 @@
 from rest_framework import generics
-from .serializers import ClientCreate, ClientListSerializator, NewsletterCreateSelializator, MessageListSelializator, \
-    MessageDetailSelializator
+from .serializers import Serializers
+
 from .models import Client, Newsletter, Message
 
 
 class ClientCreate(generics.CreateAPIView):
-    serializer_class = ClientCreate
+    serializer_class = Serializers.ClientCreate
 
 
 class ClientListView(generics.ListAPIView):
-    serializer_class = ClientListSerializator
+    serializer_class = Serializers.ClientListSerializator
     queryset = Client.objects.all()
 
 
 class ClientDetailView(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = ClientListSerializator
+    serializer_class = Serializers.ClientListSerializator
     queryset = Client.objects.all()
 
 
 class NewsletterCreate(generics.CreateAPIView):
-    serializer_class = NewsletterCreateSelializator
+    serializer_class = Serializers.NewsletterCreateSelializator
 
 
 class NewsletterListView(generics.ListAPIView):
-    serializer_class = NewsletterCreateSelializator
+    serializer_class = Serializers.NewsletterCreateSelializator
     queryset = Newsletter.objects.all()
 
 
 class NewsletterDitailView(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = NewsletterCreateSelializator
+    serializer_class = Serializers.NewsletterCreateSelializator
     queryset = Newsletter.objects.all()
 
 
 class MessageDetailView(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = MessageDetailSelializator
+    serializer_class = Serializers.MessageDetailSelializator
     queryset = Message.objects.all()
 
 
 class MessageListView(generics.ListAPIView):
-    serializer_class = MessageListSelializator
+    serializer_class = Serializers.MessageListSelializator
     queryset = Message.objects.all()
 
 
 class SendMessageView(generics.CreateAPIView):
-    serializer_class = MessageListSelializator
+    serializer_class = Serializers.MessageListSelializator
